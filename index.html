@@ -1,1 +1,176 @@
-<h1>Hello!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Make the Pertinent Salient: Task-Relevant Reconstruction for Visual Control with Distractions">
+    <meta name="keywords" content="Visual Control, Robust Representation Learning, Model-Based RL">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Make the Pertinent Salient: Task-Relevant Reconstruction for Visual Control with Distractions</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <!--   <link rel="icon" href="./static/images/favicon.svg"> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+<body>
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Make the Pertinent Salient:<br>Task-Relevant Reconstruction for Visual Control with Distractions</h1>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                            <a href="https://sites.google.com/yonsei.ac.kr/kmkim">Kyungmin Kim</a>,</span>
+                        <span class="author-block">
+                            <a href="https://jblanier.net/">JB Lanier</a>,</span>
+                        <span class="author-block">
+                            <a href="https://royf.org/">Roy Fox</a>
+                        </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                    <span class="author-block">University of California, Irvine</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <span class="link-block">
+                            <a href="https://rlj.cs.umass.edu/2025/papers/RLJ_RLC_2025_148.pdf"
+                                class="external-link button is-normal is-rounded is-dark">
+                                <span class="icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </span>
+                                <span>Paper</span>
+                            </a>
+                            </span>
+                            <!--               <span class="link-block">
+                                            <a href="https://arxiv.org/abs/2011.12948"
+                                               class="external-link button is-normal is-rounded is-dark">
+                                              <span class="icon">
+                                                  <i class="ai ai-arxiv"></i>
+                                              </span>
+                                              <span>arXiv</span>
+                                            </a>
+                                          </span> -->
+                            <!-- Video Link. -->
+                            <!--              <span class="link-block">-->
+                            <!--                <a href="#video-section"-->
+                            <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                            <!--                  <span class="icon">-->
+                            <!--                      <i class="fab fa-youtube"></i>-->
+                            <!--                  </span>-->
+                            <!--                  <span>Video</span>-->
+                            <!--                </a>-->
+                            <!--              </span>-->
+<!--                             Code Link.-->
+                                          <span class="link-block">
+                                            <a href="https://indylab.github.io/SD"
+                                               class="external-link button is-normal is-rounded is-dark">
+                                              <span class="icon">
+                                                  <i class="fab fa-github"></i>
+                                              </span>
+                                              <span>Code (Coming Soon)</span>
+                                              </a>
+                                          </span>
+
+                            <!-- Dataset Link. -->
+                                          <span class="link-block">
+                                            <a href="https://indylab.github.io/SD"
+                                               class="external-link button is-normal is-rounded is-dark">
+                                              <span class="icon">
+                                                  <i class="far fa-image"></i>
+                                              </span>
+                                              <span>Poster (Coming Soon)</span>
+                                              </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p style="font-size: 125%">
+                        Model-Based Reinforcement Learning (MBRL) has shown promise in visual control tasks due to its data efficiency. However, training MBRL agents to develop generalizable perception remains challenging, especially amid visual distractions that introduce noise in representation learning. We introduce Segmentation Dreamer (SD), a framework that facilitates representation learning in MBRL by incorporating a novel auxiliary task. Assuming that task-relevant components in images can be easily identified with prior knowledge in a given task, SD uses segmentation masks on image observations to reconstruct only task-relevant regions, reducing representation complexity. SD can leverage either ground-truth masks available in simulation or potentially imperfect segmentation foundation models. The latter is further improved by selectively applying the image reconstruction loss to mitigate misleading learning signals from mask prediction errors. In modified DeepMind Control suite and Meta-World tasks with added visual distractions, SD achieves significantly better sample efficiency and greater final performance than prior work and is especially effective in sparse reward tasks that had been unsolvable by prior work. We also validate its effectiveness in a real-world robotic lane-following task when training with intentional distractions for zero-shot transfer.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="video-section">
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered ">
+                <div class="columns is-centered">
+                    <div class="column has-text-left" style="flex: 0 0 37%;">
+                        <img src="static/images/intro_teaser_a.png" style="border-radius: 5px; margin-bottom: 12px;">
+                        <p style="font-size: 125%">Providing mask example(s) and fine-tuning a mask model, or instrumenting a simulator, to obtain masks.</p>
+                    </div>
+                    <div class="column has-text-left" style="flex: 0 0 50%;">
+                        <img src="static/images/intro_teaser_b.png" style="border-radius: 5px; margin-bottom: 12px;">
+                        <p style="font-size: 125%">An input observation in a distracting Meta-World with three alternative auxiliary task targets.
+                            Moving scenes in the background are considered distractions. (b) Observations including task-irrelevant information, disturbing world-model training. (c) and (d) Segmentation of task-relevant components using, respectively, a ground-truth mask and an approximate mask generated by segmentation models.</p>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <br />
+            <p> Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>, <a href="https://eureka-research.github.io">Eureka</a>, and <a href="https://vimalabs.github.io/">VIMA</a>.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
